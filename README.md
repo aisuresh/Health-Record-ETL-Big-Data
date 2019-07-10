@@ -5,7 +5,8 @@ Automation pipeline to ingest and calculate data in BigData Platform using Hadoo
 ### Prerequisites
 
 ```
-Download the Hortonworks Sandbox (VirtualBox / Docker) from https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html
+Download the Hortonworks Sandbox (VirtualBox / Docker) from 
+https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html
 Ensure VirtualBox (v6.0) / Docker installed
 Please note that a computer with minimum 10 GB RAM dedicated to the VirtualBox / Docker required
 ```
