@@ -100,21 +100,22 @@ tblproperties("skip.header.line.count"="1");
 ```
 describe health_record;
 ```
+![](hive-describe-table.JPG)
 
-3: Load data from HDFS into Hive table 
+3. Load data from HDFS into Hive table 
 ```
 LOAD DATA INPATH '/assignment/rows.csv' OVERWRITE INTO TABLE health_record;
 ```
 ![](screenshots/hive-data-load.JPG)
 
-4: Check row count to verify data loaded correctly 
+4. Check row count to verify data loaded correctly 
 ```
 select count(*) from health_record;
 ```
 ![](screenshots/hive-data-load.JPG)
 
 
-3: Query to check table data
+5. Query to check table data
 ```
 SELECT * FROM health_record limit 5;
 ```
