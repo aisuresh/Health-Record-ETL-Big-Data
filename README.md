@@ -100,7 +100,7 @@ tblproperties("skip.header.line.count"="1");
 ```
 describe health_record;
 ```
-![](hive-describe-table.JPG)
+![](screenshots/hive-describe-table.JPG)
 
 3. Load data from HDFS into Hive table 
 ```
