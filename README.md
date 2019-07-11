@@ -119,11 +119,11 @@ select count(*) from health_record;
 ```
 SELECT * FROM health_record limit 5;
 ```
-![](hive-table-data.JPG)
+![](screenshots/hive-table-data.JPG)
 
 We can view hive queries in Hive Query UI
 
-![](hive-query-ui.JPG)
+![](screenshots/hive-query-ui.JPG)
 
 ### Running Spark application
 
