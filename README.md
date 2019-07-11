@@ -17,6 +17,8 @@ Please note that a computer with minimum 10 GB RAM dedicated to the VirtualBox /
 
 Open VirtualBox and navigate to File -> Import Appliance. Select the sandbox image you downloaded and click Open.
 
+![](/screenshots/sandbox-hdp-vbox-setting.jpg)
+
 Make sure to allocate at least 10 GB (10240 MB) of RAM for the sandbox.
 
 Click Import and wait for VirtualBox to import the sandbox.
