@@ -43,8 +43,8 @@ Run 'ambari-admin-password-reset' command to reset admin deafult password. (e.g.
 
 ### Access Shell Web Client
 
-Alternatively you can access sandbox from shell web client
-http://sandbox-hdp.hortonworks.com:4200/ 
+Alternatively you can access sandbox from shell web client (remember to add hostname sandbox-hdp.hortonworks.com)
+http://sandbox-hdp.hortonworks.com:4200/ or http://localhost:4200
 
 The login using credentials: root / hadoop
 
