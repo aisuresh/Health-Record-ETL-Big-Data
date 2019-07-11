@@ -132,6 +132,16 @@ We can view hive queries in Hive Query UI
 scp ./health_avg_calculation.py root@sandbox-hdp.hortonworks.com:/root -P 2201
 ```
 
+Execute spark-submit to run the program:
+```
+spark-submit health_avg_calculation.py \
+    --master yarn-client \
+    --num-executors 1 \
+    --driver-memory 512m \
+    --executor-memory 512m \
+    --executor-cores 1
+```
+
 ### Visualization
 
 
