@@ -28,6 +28,8 @@ Once the sandbox has finished being imported, you may start it by selecting the 
 
 3. A console window opens and displays the boot process. This process take a few minutes. When you see the following screen, you may begin using the sandbox.
 
+![](/screenshots/sandbox-hdp-vbox-splash-screen.jpg)
+
 ### SSH on to HDP sandbox
 ssh root@sandbox-hdp.hortonworks.com -p 2201
 
