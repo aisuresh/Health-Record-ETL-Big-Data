@@ -26,6 +26,9 @@ Click Import and wait for VirtualBox to import the sandbox.
 2. Start Hortonworks Sandbox
 Once the sandbox has finished being imported, you may start it by selecting the sandbox and clicking “Start” from the VirtualBox menu.
 
+![](/screenshots/sandbox-hdp-vbox-start.jpg)
+
+
 3. A console window opens and displays the boot process. This process take a few minutes. When you see the following screen, you may begin using the sandbox.
 
 ![](/screenshots/sandbox-hdp-vbox-splash-screen.jpg)
