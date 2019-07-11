@@ -127,6 +127,10 @@ We can view hive queries in Hive Query UI
 
 ### Running Spark application
 
+1: Copy PySpark python file `health_avg_calculation.py` to HDP sandbox using Secure Copy Protocol (SCP):
+```
+scp ./health_avg_calculation.py root@sandbox-hdp.hortonworks.com:/root -P 2201
+```
 
 ### Visualization
 
