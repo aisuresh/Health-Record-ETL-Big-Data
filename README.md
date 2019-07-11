@@ -129,7 +129,7 @@ We can view hive queries in Hive Query UI
 
 1. Copy PySpark script `health_avg_calculation.py` to HDP sandbox:
 ```
-scp ./health_avg_calculation.py root@sandbox-hdp.hortonworks.com:/root -P 2201
+scp -p 2222 ./health_avg_calculation.py root@sandbox-hdp.hortonworks.com:/root
 ```
 
 Execute spark-submit to run the program:
