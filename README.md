@@ -17,6 +17,8 @@ Please note that a computer with minimum 10 GB RAM dedicated to the VirtualBox /
 
 Open VirtualBox and navigate to File -> Import Appliance. Select the sandbox image you downloaded and click Open.
 
+![](/screenshots/sandbox-hdp-vbox-setting.jpg)
+
 Make sure to allocate at least 10 GB (10240 MB) of RAM for the sandbox.
 
 Click Import and wait for VirtualBox to import the sandbox.
@@ -24,7 +26,11 @@ Click Import and wait for VirtualBox to import the sandbox.
 2. Start Hortonworks Sandbox
 Once the sandbox has finished being imported, you may start it by selecting the sandbox and clicking “Start” from the VirtualBox menu.
 
+![](/screenshots/sandbox-hdp-vbox-start.jpg)
+
 3. A console window opens and displays the boot process. This process take a few minutes. When you see the following screen, you may begin using the sandbox.
+
+![](/screenshots/sandbox-hdp-vbox-splash-screen.jpg)
 
 ### SSH on to HDP sandbox
 ssh root@sandbox-hdp.hortonworks.com -p 2201
@@ -46,10 +52,12 @@ The login using credentials: root / hadoop
 
 Access HDP sandbox Ambari UI through http://sandbox-hdf.hortonworks.com:8080 or http://localhost:8080
 
-User credentials:
-raj_ops / raj_ops
-maria_dev / maria_dev
-admin/admin
+![](/screenshots/hdp-sandbox-home-page.JPG)
+
+User credentials:     
+raj_ops / raj_ops    
+maria_dev / maria_dev    
+admin/admin    
 
 ### Data Ingestion
 
@@ -61,16 +69,24 @@ HDFS
 ```
 
 1. download source data file
+```
 wget https://chronicdata.cdc.gov/views/735e-byxc/rows.csv
+```
 
 2. hdfs make directory
+```
 hdfs dfs -mkdir /assignment
-
+```
 3. copy file from local file system to hadoop destination file system
+```
 hdfs dfs -put rows.csv /assignment
-
+```
 4. verify file copied in hadoop
+```
 hdfs dfs -ls /assignment
+```
+
+![](/screenshots/hadoop-data-load.JPG)
 
 ```
 Hive
