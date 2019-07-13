@@ -216,10 +216,10 @@ To get the average of female only:
 curl http://localhost:7755/api/hive/femaleAverage
 ```
 
-![](screenshots/rest-api-all-female-average.jpg)
+![](screenshots/rest-api-female-average.jpg)
 
 
-You can try the api link on browser url / rest api client to get the API response
+Alternatively access APIs using rest api / browser url to get the API response
 
 `
 http://localhost:7755/api/hive/femaleAverage
