@@ -182,7 +182,9 @@ Once build Once build is successful, it generate restapi-1.0-SNAPSHOT.jar in tar
 
 Copy it to anywhere you want, execute java -jar 'path of the restapi jar'. The below command bring up rest api server and listining to 7755 for api requests.
 
-`java -jar target/restapi-1.0-SNAPSHOT.jar`
+```
+java -jar target/restapi-1.0-SNAPSHOT.jar
+```
 
 ![](screenshots/rest-api-build-run.jpg)
 
@@ -221,20 +223,19 @@ curl http://localhost:7755/api/hive/femaleAverage
 
 Alternatively access APIs using rest api / browser url to get the API response
 
-`
+```
 http://localhost:7755/api/hive/femaleAverage
-`
+```
 
 ![](screenshots/rest-api-response.jpg)
 
 
-`
+```
 http://localhost:7755/api/hive/average
-`
+```
 
 ![](screenshots/rest-api-response-average.jpg)
 
-
-
+The REST API response contains year, question, average.
 
 
