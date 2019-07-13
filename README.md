@@ -39,6 +39,8 @@ Default password is root/hadoop
 
 Please remember to change password after first time login!
 
+![](screenshots/hdp-sandbox-ssh-login.JPG)
+
 Run 'ambari-admin-password-reset' command to reset admin deafult password. (e.g. admin/admin)
 
 ### Access Shell Web Client
@@ -100,6 +102,8 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 tblproperties("skip.header.line.count"="1"); 
 ```
 
+![](screenshots/hive-table-create.JPG)
+
 2. Desribe table
 ```
 describe health_record;
@@ -116,7 +120,7 @@ LOAD DATA INPATH '/assignment/rows.csv' OVERWRITE INTO TABLE health_record;
 ```
 select count(*) from health_record;
 ```
-![](screenshots/hive-data-load.JPG)
+![](screenshots/hive-table-count.JPG)
 
 
 5. Query to check table data
@@ -146,7 +150,80 @@ spark-submit health_avg_calculation.py \
     --executor-cores 1
 ```
 
-### Visualization
+![](screenshots/spark-job-submit.JPG)
+
+The Spark UI to view spark job history
+
+
+![](screenshots/spark-ui.JPG)
+
+The results are stored in Hive
+
+### API to access results stored in Hive
+
+Developed RESTful API service using Spring Boot to access results from Hive
+
+Go to rest-api directory, run `mvn install` to build the project.
+
+Ensure that port (7755) mentioned in src/main/application.properties is available to use.
+
+Once build Once build is successful, it generate restapi-1.0-SNAPSHOT.jar in target directory.
+
+Copy it to anywhere you want, execute java -jar 'path of the restapi jar'. The below command bring up rest api server and listining to 7755 for api requests.
+
+`java -jar target/restapi-1.0-SNAPSHOT.jar`
+
+![](screenshots/rest-api-build-run.JPG)
+
+### REST API Request through curl
+
+Open a new terminal window, execute curl command to hit the api
+
+To get list of database:
+
+```
+curl http://localhost:7755/api/hive/database
+```
+
+To get list of tables:
+
+```
+curl http://localhost:7755/api/hive/table
+```
+
+To get the average of all age group:
+
+```
+curl http://localhost:7755/api/hive/average
+```
+
+![](screenshots/rest-api-all-age-average.JPG)
+
+To get the average of female only:
+
+```
+curl http://localhost:7755/api/hive/femaleAverage
+```
+
+![](screenshots/rest-api-all-female-average.JPG)
+
+
+You can try the api link on browser url / rest api client to get the API response
+
+`
+http://localhost:7755/api/hive/femaleAverage
+`
+
+![](screenshots/rest-api-response.JPG)
+
+
+`
+http://localhost:7755/api/hive/average
+`
+
+![](screenshots/rest-api-response-average.JPG)
+
+
 
 
 
