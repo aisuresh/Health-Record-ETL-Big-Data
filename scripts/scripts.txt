@@ -1,0 +1,61 @@
+-------------------
+Scripts / Commands:
+-------------------
+
+HDFS:
+-----
+1. download source data file
+wget https://chronicdata.cdc.gov/views/735e-byxc/rows.csv
+
+2. hdfs make directory
+hdfs dfs -mkdir /assignment
+
+3. copy file from local file system to hadoop destination file system
+hdfs dfs -put rows.csv /assignment
+
+4. verify file copied in hadoop
+hdfs dfs -ls /assignment
+
+Hive:
+-----
+1. create Hive table - It create table in default schema
+CREATE TABLE IF NOT EXISTS health_record(YearStart INT,YearEnd INT,LocationAbbr STRING,LocationDesc STRING,Datasource STRING,Class STRING,Topic STRING,Question STRING,Data_Value_Unit STRING,Data_Value_Type STRING,Data_Value DOUBLE,Data_Value_Alt DOUBLE,Data_Value_Footnote_Symbol STRING,Data_Value_Footnote STRING,Low_Confidence_Limit DOUBLE,High_Confidence_Limit  DOUBLE,Sample_Size INT,Total STRING,`Age(months)` STRING,Gender STRING,`Race/Ethnicity` STRING,GeoLocation STRING,ClassID STRING,TopicID STRING,QuestionID STRING,DataValueTypeID STRING,LocationID INT,StratificationCategory1 STRING,Stratification1 STRING,StratificationCategoryId1 STRING,StratificationID1 STRING)
+COMMENT 'This is health record table'
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+tblproperties("skip.header.line.count"="1");
+
+2. load data from HDFS into Hive table
+LOAD DATA INPATH '/assignment/rows.csv' OVERWRITE INTO TABLE health_record;
+
+Spark:
+------
+1. copy PySpark script health_avg_calculation.py to HDP sandbox:
+scp -p 2222 ./health_avg_calculation.py root@sandbox-hdp.hortonworks.com:/root
+
+2. execute spark-submit to run the program:
+spark-submit health_avg_calculation.py \
+    --master yarn-client \
+    --num-executors 1 \
+    --driver-memory 1g \
+    --executor-memory 1g \
+    --executor-cores 1
+
+REST API:
+---------
+1. rest-api spring boot project build
+mvn install
+
+2. start rest api server
+java -jar target/restapi-1.0-SNAPSHOT.jar
+
+3. To get list of database:
+curl http://localhost:7755/api/hive/database
+
+4. To get list of tables:
+curl http://localhost:7755/api/hive/table
+
+5. To get the average of all age group:
+curl http://localhost:7755/api/hive/average
+
+6. To get the average of female only:
+curl http://localhost:7755/api/hive/femaleAverage

@@ -11,7 +11,7 @@ Ensure VirtualBox (v6.0) / Docker installed
 Please note that a computer with minimum 10 GB RAM dedicated to the VirtualBox / Docker required
 ```
 
-### Installing
+## Environment setup
 
 1. Import Hortonworks Sandbox
 
@@ -73,14 +73,14 @@ raj_ops / raj_ops
 maria_dev / maria_dev    
 admin/admin    
 
-### Data Ingestion
+## Data Ingestion
 
 SSH to sandbox
 ssh root@sandbox-hdp.hortonworks.com -p 2201
 
 ![](screenshots/hdp-sandbox-ssh-login.JPG)
 
-#### HDFS
+### HDFS
 
 1. download source data file
 ```
@@ -102,7 +102,7 @@ hdfs dfs -ls /assignment
 
 ![](/screenshots/hadoop-data-load.JPG)
 
-#### Hive
+### Hive
 1. Create Hive table - It create table in default schema
 ```
 CREATE TABLE IF NOT EXISTS health_record(YearStart INT,YearEnd INT,LocationAbbr STRING,LocationDesc STRING,Datasource STRING,Class STRING,Topic STRING,Question STRING,Data_Value_Unit STRING,Data_Value_Type STRING,Data_Value DOUBLE,Data_Value_Alt DOUBLE,Data_Value_Footnote_Symbol STRING,Data_Value_Footnote STRING,Low_Confidence_Limit DOUBLE,High_Confidence_Limit  DOUBLE,Sample_Size INT,Total STRING,`Age(months)` STRING,Gender STRING,`Race/Ethnicity` STRING,GeoLocation STRING,ClassID STRING,TopicID STRING,QuestionID STRING,DataValueTypeID STRING,LocationID INT,StratificationCategory1 STRING,Stratification1 STRING,StratificationCategoryId1 STRING,StratificationID1 STRING)
@@ -142,6 +142,8 @@ We can view hive queries in Hive Query UI
 
 ![](screenshots/hive-query-ui.JPG)
 
+
+## Spark
 ### Running Spark application
 
 1. Copy PySpark script `health_avg_calculation.py` to HDP sandbox:
