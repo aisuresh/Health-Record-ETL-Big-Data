@@ -137,8 +137,8 @@ Execute spark-submit to run the program:
 spark-submit health_avg_calculation.py \
     --master yarn-client \
     --num-executors 1 \
-    --driver-memory 512m \
-    --executor-memory 512m \
+    --driver-memory 1g \
+    --executor-memory 1g \
     --executor-cores 1
 ```
 
