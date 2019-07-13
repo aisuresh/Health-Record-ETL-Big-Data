@@ -151,7 +151,7 @@ We can view hive queries in Hive Query UI
 scp -p 2222 ./health_avg_calculation.py root@sandbox-hdp.hortonworks.com:/root
 ```
 
-Execute spark-submit to run the program:
+2. Execute spark-submit to run the program:
 ```
 spark-submit health_avg_calculation.py \
     --master yarn-client \
@@ -192,7 +192,7 @@ java -jar target/restapi-1.0-SNAPSHOT.jar
 
 ### REST API Request through curl
 
-Open a new terminal window, execute curl command to hit the api
+Open a new terminal window, call API using curl command:
 
 To get list of database:
 
@@ -200,7 +200,7 @@ To get list of database:
 curl http://localhost:7755/api/hive/database
 ```
 
-To get list of tables:
+1. To get list of tables:
 
 ```
 curl http://localhost:7755/api/hive/table
