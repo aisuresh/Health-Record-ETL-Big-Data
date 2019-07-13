@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/hive")
+@RequestMapping("/api/hive")
 public class HiveController {
 
 	@Autowired
@@ -50,6 +50,4 @@ public class HiveController {
 
 		return new ResponseEntity<List<Map<String, Object>>>(rows, HttpStatus.OK);
 	}
-
-
 }
