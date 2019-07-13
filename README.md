@@ -32,6 +32,14 @@ Once the sandbox has finished being imported, you may start it by selecting the 
 
 ![](/screenshots/sandbox-hdp-vbox-splash-screen.jpg)
 
+4. Map Sandbox IP to your desired hostname in the hosts file. Execute below command in linux shell window.
+
+```
+echo '127.0.0.1 sandbox-hdp.hortonworks.com' | sudo tee -a /etc/hosts
+```
+
+![](/screenshots/hdp-sandbox-hostname.JPG)
+
 ### SSH on to HDP sandbox
 ssh root@sandbox-hdp.hortonworks.com -p 2201
 
@@ -70,8 +78,9 @@ admin/admin
 SSH to sandbox
 ssh root@sandbox-hdp.hortonworks.com -p 2201
 
-#### HDFS
+![](screenshots/hdp-sandbox-ssh-login.JPG)
 
+#### HDFS
 
 1. download source data file
 ```
