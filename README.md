@@ -152,12 +152,14 @@ spark-submit health_avg_calculation.py \
 
 ![](screenshots/spark-job-submit.JPG)
 
-The Spark UI to view spark job history
+Navigate to Spark UI page to view spark job history:
 
 
 ![](screenshots/spark-ui.JPG)
 
-The results are stored in Hive
+The calculate average results are persist in Hive.
+
+## REST API
 
 ### API to access results stored in Hive
 
@@ -173,7 +175,7 @@ Copy it to anywhere you want, execute java -jar 'path of the restapi jar'. The b
 
 `java -jar target/restapi-1.0-SNAPSHOT.jar`
 
-![](screenshots/rest-api-build-run.JPG)
+![](screenshots/rest-api-build-run.jpg)
 
 ### REST API Request through curl
 
@@ -197,7 +199,7 @@ To get the average of all age group:
 curl http://localhost:7755/api/hive/average
 ```
 
-![](screenshots/rest-api-all-age-average.JPG)
+![](screenshots/rest-api-all-age-average.jpg)
 
 To get the average of female only:
 
@@ -205,7 +207,7 @@ To get the average of female only:
 curl http://localhost:7755/api/hive/femaleAverage
 ```
 
-![](screenshots/rest-api-all-female-average.JPG)
+![](screenshots/rest-api-all-female-average.jpg)
 
 
 You can try the api link on browser url / rest api client to get the API response
@@ -214,14 +216,14 @@ You can try the api link on browser url / rest api client to get the API respons
 http://localhost:7755/api/hive/femaleAverage
 `
 
-![](screenshots/rest-api-response.JPG)
+![](screenshots/rest-api-response.jpg)
 
 
 `
 http://localhost:7755/api/hive/average
 `
 
-![](screenshots/rest-api-response-average.JPG)
+![](screenshots/rest-api-response-average.jpg)
 
 
 
